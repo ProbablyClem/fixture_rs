@@ -63,7 +63,7 @@ impl Fixture for Text {
 
 Unfortunatly due to Rust orphan rules,
 you can't implement the Fixture trait on primitive types nor any forein types
-![Rust Orphan](doc/rust_orphan.png)
+![Rust Orphan](../doc/rust_orphan.png)
 
 This means that you need to wrap the primitive types, or any foreign struct.
 Which means that this crate is particulary usefull when enforcing type driven development
