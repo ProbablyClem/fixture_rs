@@ -3,14 +3,18 @@ resolver = "2"
 members = ["fixture_rs", "fixture_derive", "tests"]
 
 [workspace.package]
+keywords = [
+    "development-tools",
+    "development-tools::procedural-macro-helpers",
+    "development-tools::testing",
+]
+categories = ["fixture", "test", "macro", "type-driven-development"]
+repository = "https://github.com/ProbablyClem/fixture_rs"
+homepage = "https://github.com/ProbablyClem/fixture_rs"
+rust-version = "1.85.0"
 description = "Fixture derive macro for Type Driven Development"
 license = "MIT OR Apache-2.0"
 readme = "README.md"
 authors = ["ProbablyClem"]
 version = "0.0.1"
 edition = "2024"
-keywords = ["fixture", "test", "macro", "type-driven-development"]
-categories = ["fixture", "test", "macro", "type-driven-development"]
-repository = "https://github.com/ProbablyClem/fixture_rs"
-homepage = "https://github.com/ProbablyClem/fixture_rs"
-rust-version = "1.86.0"
