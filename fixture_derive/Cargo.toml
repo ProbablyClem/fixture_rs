@@ -1,7 +1,16 @@
 [package]
 name = "fixture_derive"
-version = "0.0.1"
-edition = "2024"
+authors.workspace = true
+version.workspace = true
+edition.workspace = true
+keywords.workspace = true
+description.workspace = true
+categories.workspace = true
+license.workspace = true
+readme.workspace = true
+repository.workspace = true
+homepage.workspace = true
+rust-version.workspace = true
 
 [lib]
 proc-macro = true

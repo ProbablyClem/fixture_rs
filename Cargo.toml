@@ -10,3 +10,7 @@ authors = ["ProbablyClem"]
 version = "0.0.1"
 edition = "2024"
 keywords = ["fixture", "test", "macro", "type-driven-development"]
+categories = ["fixture", "test", "macro", "type-driven-development"]
+repository = "https://github.com/ProbablyClem/fixture_rs"
+homepage = "https://github.com/ProbablyClem/fixture_rs"
+rust-version = "1.86.0"
