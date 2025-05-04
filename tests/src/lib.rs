@@ -1,6 +1,5 @@
 use fixture_rs::Fixture;
 
-// Exemple de struct pour test
 #[derive(Fixture)]
 pub struct User {
     pub name: String,
@@ -13,6 +12,11 @@ pub struct Group {
     pub users: Vec<User>,
 }
 
+impl Fixture for String {
+    fn fixture() -> Self {
+        "string".to_string()
+    }
+}
 // Tests unitaires
 #[cfg(test)]
 mod tests {

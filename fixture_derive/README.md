@@ -1,8 +1,10 @@
 # fixture_rs
 
-## Create default fixtures for your types
+## Simple Derive Macro to generate fixtures
 
-This crates exposes a simple fixture Trait
+### Usage
+
+You need to define a simple fixture trait in your repository
 
 ```rust
 pub trait Fixture {
@@ -10,7 +12,40 @@ pub trait Fixture {
 }
 ```
 
-wich can be automaticaly derived
+And then you can implement it for primitive types, or custom structs
+
+````rust
+impl Fixture for String {
+    fn fixture() -> Self {
+        "string".to_string()
+    }
+}
+
+impl Fixture for u32 {
+    fn fixture() -> Self {
+        1
+    }
+}
+
+impl<T: Fixture> Fixture for Option<T> {
+    fn fixture() -> Self {
+        Some(T::fixture())
+    }
+}
+
+impl<T: Fixture> Fixture for Vec<T> {
+    fn fixture() -> Self {
+        vec![T::fixture()]
+    }
+}
+
+impl<T: Fixture> Fixture for Box<T> {
+    fn fixture() -> Self {
+        Box::new(T::fixture())
+    }
+}
+```
+Thanks to this crate, it can be automatically derived
 
 ```rust
 #[derive(Fixture)]
@@ -46,24 +81,4 @@ You can then call fixture() to use it in your tests
     }
 
 ```
-
-## Implementation
-
-You need to implement it manually for your value object such as
-
-```rust
-impl Fixture for Text {
-    fn fixture() -> Self {
-        "string".into()
-    }
-}
-```
-
-## Limitations
-
-Unfortunatly due to Rust orphan rules,
-you can't implement the Fixture trait on primitive types nor any forein types
-![Rust Orphan](doc/rust_orphan.png)
-
-This means that you need to wrap the primitive types, or any foreign struct.
-Which means that this crate is particulary usefull when enforcing type driven development
+````
