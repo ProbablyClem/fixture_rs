@@ -67,3 +67,12 @@ you can't implement the Fixture trait on primitive types nor any forein types
 
 This means that you need to wrap the primitive types, or any foreign struct.
 Which means that this crate is particulary usefull when enforcing type driven development
+
+## Contributions
+
+Contributions are welcomed in this project !
+
+Interessting things to add includes :
+
+- Fixture implementation for more primitives and std structs
+- Fixture::fixture_builder() -> Builder method to return a builder of the struct and thus customise the object
