@@ -82,3 +82,12 @@ You can then call fixture() to use it in your tests
 
 ```
 ````
+
+## Contributions
+
+Contributions are welcomed in this project !
+
+Interessting things to add includes :
+
+- Fixture implementation for more primitives and std structs
+- Fixture::fixture_builder() -> Builder method to return a builder of the struct and thus customise the object
