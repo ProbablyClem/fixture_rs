@@ -9,4 +9,4 @@ edition.workspace = true
 keywords.workspace = true
 
 [dependencies]
-fixture = { path = "../fixture" }
+fixture_rs = { path = "../fixture_rs" }

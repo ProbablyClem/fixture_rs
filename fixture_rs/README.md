@@ -1,6 +1,18 @@
-use fixture_rs::Fixture;
+# fixture_rs
 
-// Exemple de struct pour test
+## Create default fixtures for your types
+
+This crates exposes a simple fixture Trait
+
+```rust
+pub trait Fixture {
+    fn fixture() -> Self;
+}
+```
+
+wich can be automaticaly derived
+
+```rust
 #[derive(Fixture)]
 pub struct User {
     pub name: String,
@@ -12,12 +24,11 @@ pub struct User {
 pub struct Group {
     pub users: Vec<User>,
 }
+```
 
-// Tests unitaires
-#[cfg(test)]
-mod tests {
-    use super::*;
+You can then call fixture() to use it in your tests
 
+```rust
     #[test]
     fn test_user_fixture() {
         let user = User::fixture();
@@ -33,4 +44,5 @@ mod tests {
         let user = &group.users[0];
         assert_eq!(user.name, "string".to_string());
     }
-}
+
+```
