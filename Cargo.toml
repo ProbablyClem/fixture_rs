@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["fixture", "fixture_derive"]
+members = ["fixture", "fixture_derive", "tests"]
 
 [workspace.package]
 description = "Fixture derive macro for Type Driven Development"

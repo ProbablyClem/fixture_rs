@@ -1,3 +1,5 @@
+pub use fixture_derive::Fixture;
+
 pub trait Fixture {
     fn fixture() -> Self;
 }
